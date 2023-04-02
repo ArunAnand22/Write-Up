@@ -1,0 +1,9 @@
+            Blog App
+
+Icons used - Material UI
+styling - CSS only
+
+1.Folder Topbar - Navbar with icons 
+2.Folder Header - Header content and background image
+3.Folder Sidebar - 
+3.Folder Posts - contain indivial posts 
