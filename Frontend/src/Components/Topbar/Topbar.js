@@ -5,8 +5,10 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import PinterestIcon from '@mui/icons-material/Pinterest';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import SearchIcon from '@mui/icons-material/Search';
+import { Link } from 'react-router-dom';
 
 function Topbar() {
+  const user = false;
   return (
     <div className='top'>
         <div className="topLeft">
@@ -17,15 +19,36 @@ function Topbar() {
         </div>
         <div className="topCenter">
             <ul className="topList">
-                <li className='topListItem'>HOME</li>
-                <li className='topListItem'>ABOUT</li>
-                <li className='topListItem'>CONTACT</li>
-                <li className='topListItem'>WRITE</li>
-                <li className='topListItem'>LOGOUT</li>
+                <li className='topListItem'>
+                  <Link to='/' style={{textDecoration:"none",color:"inherit"}}>HOME</Link>
+                </li>
+                <li className='topListItem'>
+                <Link to='/about' style={{textDecoration:"none",color:"inherit"}}>ABOUT</Link>
+                </li>
+                <li className='topListItem'>
+                <Link to='/' style={{textDecoration:"none",color:"inherit"}}>CONTACT</Link>
+                </li>
+                <li className='topListItem'>
+                <Link to='/write' style={{textDecoration:"none",color:"inherit"}}>WRITE</Link>
+                </li>
+                <li className='topListItem'>
+                {user && "LOGOUT"}
+                </li>
             </ul>
         </div>
         <div className="topRight">
-            <img className='topImg' src='https://www.clipartkey.com/mpngs/m/208-2089363_user-profile-image-png.png'/>
+          {
+            user ? (
+              <img className='topImg' src='https://www.clipartkey.com/mpngs/m/208-2089363_user-profile-image-png.png'/>
+            ):(
+            <ul className='topList'>
+              <li className='topListItem'>
+              <Link to='/login' style={{textDecoration:"none",color:"inherit"}}>LOGIN</Link>
+              </li>
+              <Link to='/register' style={{textDecoration:"none",color:"inherit"}}>REGISTER</Link>
+            </ul>
+            )
+          }
             <SearchIcon className='topSearchIcon'/>
         </div>
     </div>

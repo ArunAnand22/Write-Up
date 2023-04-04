@@ -2,7 +2,7 @@ import React from 'react'
 import './home.css'
 import Header from '../../Components/Header/Header'
 import Posts from '../../Components/Posts/Posts'
-import Sidebar from '../../Sidebar/Sidebar'
+import Sidebar from '../../Components/Sidebar/Sidebar'
 
 function Home() {
   return (
